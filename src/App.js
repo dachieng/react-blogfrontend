@@ -5,6 +5,11 @@ import React from 'react';
 import Register from './components/Register';
 import Login from './components/Login';
 import Logout from './components/Logout';
+import Single from './components/Single';
+import Admin from './components/Admin'
+import Create from './components/admin/Create'
+import Delete from './components/admin/Delete';
+import Edit from './components/admin/Edit';
 
 function App() {
 
@@ -23,9 +28,14 @@ function App() {
     <div>
       <Routes>
         <Route path="/" element={<PostList posts={posts} />} />
-        <Route path="register" element={<Register />} />
+        <Route path="register/" element={<Register />} />
         <Route path='login/' element={<Login />} />
-        <Route path='logout' element={<Logout />} />
+        <Route path='logout/' element={<Logout />} />
+        <Route path=':slug/' element={<Single />} />
+        <Route path="admin/posts/" element = {<Admin />} />
+        <Route path="post/create/" element={<Create />} />
+        <Route path="post/edit/:id/" element={<Edit />} />
+        <Route path="post/delete/:id/" element={<Delete />} />
       </Routes>
     </div>
   );

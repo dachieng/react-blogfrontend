@@ -8,6 +8,7 @@ import Grid from '@mui/material/Grid'
 import Container from '@mui/material/Container'
 import { useTheme } from '@mui/material/styles';
 import { makeStyles } from '@mui/styles'
+import { Link } from '@mui/material'
 
 const useStyles = makeStyles(() => ({
 	cardMedia: {
@@ -60,14 +61,23 @@ let PostList = ({ posts }) => {
              return (
                <Grid item key={post.id} xs={12} xm={4} md={4}>
                   <Card>
-                    <CardMedia 
-                      width="100%"
-                      className={classes.cardMedia}
-                      component="img"
-                      image="https://source.unsplash.com/random"
-                      title="Image title"
-                      height="300px"
-                    />
+                    <CardHeader className={classes.cardHeader}>
+                      <Link
+                        color="textPrimary"
+                        to={post.slug}
+                        component="a"
+                        href={post.slug}
+                      >
+                        <CardMedia 
+                          width="100%"
+                          className={classes.cardMedia}
+                          component="img"
+                          image="https://source.unsplash.com/random"
+                          title="Image title"
+                          height="300px"
+                        />
+                      </Link>
+                    </CardHeader>
                     <CardContent>
                       <Typography
                         gutterBottom

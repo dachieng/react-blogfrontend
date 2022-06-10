@@ -8,6 +8,7 @@ import { CssBaseline } from '@mui/material';
 import { NavLink, Link } from 'react-router-dom';
 
 
+
 const useStyles = makeStyles(() => ({
 	appBar: {
 		borderBottom: `1px solid ${useTheme().palette.divider}`,
@@ -39,6 +40,8 @@ const menuItems = [
 
 function Header() {
 	const classes = useStyles();
+
+
 	return (
     <>
       <CssBaseline />
@@ -69,6 +72,7 @@ function Header() {
 							BlogMe
 						</Link>
 					</Typography>
+					
 					<nav>
 						{
 							menuItems.map(menu => {
