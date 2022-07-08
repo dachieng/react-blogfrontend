@@ -1,20 +1,23 @@
-import React from 'react'
-import Posts from './admin/Posts'
-import axiosInstance from './axios'
+import React from 'react';
+import Posts from '../pages/admin/Posts';
+import { GET } from '../utils/axiosRequests';
 
-function Admin() {
-    const [posts, setPosts] = React.useState([])
+let Admin = () => {
+  const [posts, setPosts] = React.useState([]);
 
-    React.useEffect(() => {
-        axiosInstance.get().then(res => res.json)
-        .then(data => setPosts(data))
-    }, [posts])
+  React.useEffect(() => {
+    let getPosts = async () => {
+      let response = await GET('posts/admin/');
+      setPosts(response.data);
+    };
+    getPosts();
+  }, [setPosts]);
 
   return (
     <div>
       <Posts posts={posts} />
     </div>
-  )
-}
+  );
+};
 
-export default Admin
+export default Admin;
