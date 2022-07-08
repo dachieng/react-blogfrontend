@@ -32,11 +32,11 @@ const App = () => {
     <div>
       <Routes>
         <Route path='/' element={<PostList posts={posts} />} />
-        <Route path=':slug/' element={<Single />} />
-        <Route path='register/' element={<Register />} />
-        <Route path='login/' element={<Login />} />
+        <Route path='/:slug' element={<Single />} />
+        <Route path='/register' element={<Register />} />
+        <Route path='/login' element={<Login />} />
         <Route
-          path='logout/'
+          path='/logout/'
           element={
             <ProtectedRoute>
               <Logout />
@@ -44,7 +44,7 @@ const App = () => {
           }
         />
         <Route
-          path='admin/posts/'
+          path='/admin/posts'
           element={
             <ProtectedRoute>
               <Admin />
@@ -52,7 +52,7 @@ const App = () => {
           }
         />
         <Route
-          path='post/create/'
+          path='/post/create'
           element={
             <ProtectedRoute>
               <Create />
@@ -60,7 +60,7 @@ const App = () => {
           }
         />
         <Route
-          path='post/edit/:id/'
+          path='/post/edit/:id'
           element={
             <ProtectedRoute>
               <Edit />
@@ -68,7 +68,7 @@ const App = () => {
           }
         />
         <Route
-          path='post/delete/:id/'
+          path='/post/delete/:id'
           element={
             <ProtectedRoute>
               <Delete />
