@@ -103,7 +103,8 @@ function Posts({ posts }) {
                 <TableRow>
                   <TableCell colSpan={4} sx={{ display: 'flex-end' }}>
                     <Button
-                      href={'/post/create'}
+                      component='a'
+                      href='/post/create'
                       variant='contained'
                       color='primary'
                     >
