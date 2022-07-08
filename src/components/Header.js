@@ -36,7 +36,7 @@ const menuItems = [
   },
   {
     text: 'Admin',
-    path: 'admin/posts/'
+    path: '/admin/posts'
   }
 ];
 
