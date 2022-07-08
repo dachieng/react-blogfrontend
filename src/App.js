@@ -18,7 +18,7 @@ const App = () => {
   React.useEffect(() => {
     let fetchData = async () => {
       try {
-        await fetch('http://localhost:8000/posts/')
+        await fetch('https://dorcas-blogger.herokuapp.com/posts/')
           .then((res) => res.json())
           .then((data) => setPosts(data));
       } catch (err) {
